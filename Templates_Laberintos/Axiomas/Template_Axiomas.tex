@@ -1,0 +1,252 @@
+\documentclass[spanish,twoside]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PAQUETES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsthm}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage[vcentering,dvips,hcentering]{geometry}
+\usepackage{mathrsfs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{quattrocento}
+\usepackage[T1]{fontenc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{ulem}
+\usepackage{amssymb}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[utf8]{inputenc}     
+\usepackage[pdftex]{color,graphicx}     
+\usepackage{here}
+\usepackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage{float}  % Para poner H en las figuras
+\usepackage{url} % Para poner URL's en la bibliografía/pies de nota.
+\usepackage{titlesec}
+\usepackage{listings}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ESTILO DE PÁGINA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\geometry{papersize={168mm,225mm},total={124mm,185mm}}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\oddsidemargin}{-1.1cm}
+\addtolength{\evensidemargin}{-1.1cm}
+\addtolength{\textwidth}{.7in}
+\addtolength{\headsep}{.4in}
+\pagestyle{fancy}
+\titleformat{\section}
+  {\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
+\patchcmd{\thebibliography}{\chapter*}{\section*}{}{} % Para que la bibliografía aparezca en la misma página
+\addto\captionsspanish{\renewcommand{\bibname}{Referencias}}
+\decimalpoint
+\newtheorem{theorem}{Teorema}
+\newtheorem{definition}{Definición}
+\newtheorem*{proposition}{Proposición}
+\newtheorem*{corollary}{Corolario}
+\newtheorem*{example}{Ejemplo}
+\newtheorem*{lemma}{Lema}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONFIGURACIÓN CÓDIGO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lstset
+{ %Formatting for code in appendix
+    language=Python,
+    basicstyle=\footnotesize,
+    numbers=left,
+    stepnumber=1,
+    showstringspaces=false,
+    tabsize=1,
+    breaklines=true,
+    breakatwhitespace=false,
+}
+
+% Para insertar código, cambiar el lengiaje a el lenguaje del código presentado. Como default, está Python. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%% INICIALIZACIÓN DE DOCUMENTO %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\setcounter{page}{1} %La página en la que empieza el artículo
+\fancyhead{}
+\renewcommand{\headrulewidth}{2pt}% 2pt header rule
+\renewcommand{\headrule}{\hbox to\headwidth{%
+  \color{NavyBlue}\leaders\hrule height \headrulewidth\hfill}}%color de la línea, BurntOrange para Matematico del #, NavyBlue para Axiomas Teoremas, Green para Aterrizando, Red para Activa, Goldenrod para Olimpica y RyalPurple para Horizonte http://en.wikibooks.org/wiki/LaTeX/Colors#The_68_standard_colors_known_to_dvips
+\fancyhead[RE]{\textbf{laberintos e infinitos}}
+\fancyhead[LO]{\textbf{Axiomas, teoremas y algo más}} %La sección a la que pertenece el artículo
+%\thispagestyle{plain}
+\fancyfoot{}
+\fancyfoot[C]{2.6570415588986394897683205211695427040366888}
+\fancyfoot[LE,RO]{\thepage}
+\parindent=0in
+\hspace{1pt}
+\textbf{\Large Nombre del artículo}
+\begin{flushright}
+
+Nombre del autor \\
+\textit{Ocupaci\'on del autor}\\
+
+\end{flushright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EPÍGRAFE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{flushright}
+\textit{``Un ep\'igrafe es una cita que sintetiza o ilustra la idea general de un texto’’}\\
+Pseudo manual de estilo de Laberintos e Infinitos\\
+\end{flushright}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECCIONES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Nombre de la secci\'on.} %El asterisco es para que no aparezca el número de la sección.
+\qquad S\'olo el primer p\'arrafo de la secci\'on lleva sangr\'ia. Esto incluye el primer p\'arrafo del art\'iculo. Tambi\'en podemos pones subsecciones y subsubsecciones.
+
+\subsection*{Nombre de la subsecci\'on.}
+
+\subsubsection*{Nombre de la subsubsecci\'on}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ESPACIO ENTRE PÁRAFOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Para terminar un p\'arrafo, no olvides poner dos diagonales hacia atr\'as ($\backslash \backslash$) y dejar un espacio antes de empezar el siguiente.\\
+
+As\'i obtenemos los espacios entre p\'arrafos.\\
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% NOTAS AL PIE DE PÁGINA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Nota al pie.\footnote{Texto de la nota.} Notar que el superíndice va \textit{después} del punto (o el signo que sea). Es importante no poner bibliografía en las notas al pie de p\'agina.\\
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Definiciones, Teoremas, Lemas, Proposiciones, Corolarios, Ejemplos y Demostraciones%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{definition}
+Esta es una \textbf{definici\'on}. 
+\end{definition}
+
+\begin{theorem} %Cambiar por lemma, proposition, corollary o example según sea el caso
+\textbf{Teorema del Valor Intermedio}\\
+Texto del teorema.%Ignorar \textbf{} si el teorema no tiene nombre.
+\end{theorem} %Debe coincidir con el \begin{} anterior.
+
+\begin{proof}
+Demostraci\'on del teorema.\\
+\end{proof}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% CONSIDERACIONES DE ESTILO %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}
+\item Los \textbf{conceptos importantes} se pone en negritas la primera vez que aparecen en el art\'iculo.
+\item Las comillas se ponen ``texto entrecomillado''.
+\item Las \textit{letras cursivas} se usan cuando el autor las puso como \'enfasis, en t\'itulo de libros y en palabras en otro idioma.
+\item No se usa texto subrayado.
+\item No debe quedar una \'unica l\'inea de un p\'arrafo en una p\'agina si el resto del p\'arrafo est\'a en otra. 
+\item No usamos $\backslash \backslash$ antes o despu\'es de los siguientes comandos:
+\begin{itemize}
+\item $\backslash$begin\{section\} (subsection,subsubsection).
+\item $\backslash$begin\{center\}(flushright, flushleft, enumerate, itemize).
+\item $\backslash$end\{center\}(flushright, flushleft, enumerate, itemize).
+\item \$\$, $\backslash$[ o $\backslash$].
+\end{itemize}
+\item Si el art\'iculo requiere de numeraci\'on en secciones, definiciones, proposiciones, etc, s\'olo se requiere quitar los asteriscos en $\backslash$section*\{\} o en las l\'ineas 31-36 ($\backslash$newtheorem* $\ldots$)
+\item Para poner elipsis se usa $\ldots$, para poner subraya se pone $\_$ y para obtener tilde se pone $\sim$.
+\item Utilizamos el paquete \textit{listings} para poder importar y utilizar código de algún programa en el artículo. Por ejemplo, un breve programa de python se vería así: 
+\begin{lstlisting}[language=Python]
+parents, babies = (1, 1)
+while babies < 100:
+    print 'This generation has {0} babies'.format(babies)
+    parents, babies = (babies, parents + babies)
+\end{lstlisting}
+\item La bibliografía sigue la guía de estilo del formato Chicago. 
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% IMÁGENES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%La imagen debe estar en la misma carpeta que el artículo.
+%\begin{center}
+%\includegraphics[scale=0.23]{nombre del archivo.jpg}%cambiar el número en scale=0.23 para cambiar el tamaño de la imagen.   
+%\end{center}
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% REFERENCIAS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{3}
+
+\bibitem{Libro} %Para libros
+Autor, Nombre.
+\textit{Nombre del libro}.
+Editorial, año. 
+
+\bibitem{Articulo} %Para artículos publicados en revistas.
+Autor, Nombre.
+``Título del artículo’’,
+\textit{Nombre de la revista} número (año):
+páginas.
+
+\bibitem{PagWeb} %Para páginas web. Recordar usar $\_$ $\sim$ de ser necesario
+``Nombre del artículo o página.’’
+\textit{Wikipedia/Jstor (opcional)}.
+Consultado el fecha de consulta.\\
+\url{Direccion\_URL\_DeLaPagina}
+
+\end{thebibliography}
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
